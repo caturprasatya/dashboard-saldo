@@ -36,7 +36,7 @@ const financial = [
   },
   {
     status: '',
-    title: '',
+    title: ' ',
     amount: ''
   },
 ]
