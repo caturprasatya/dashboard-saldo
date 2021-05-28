@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="jamie-fenn-WdQuEEJe-O0-unsplash" d="M0 0H26V26H0z" class="cls-1" transform="translate(2514 3683)"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#a3f4fc}
+        </style>
+    </defs>
+    <g id="Mask_Group_152" clip-path="url(#clip-path)" transform="translate(-2514 -3683)">
+        <g id="wallet" transform="translate(2514 3685.184)">
+            <g id="Group_7484">
+                <g id="Group_7483">
+                    <path id="Path_8449" d="M21.6 5.192H3.641A3.645 3.645 0 0 0 0 8.833v13.592a3.645 3.645 0 0 0 3.641 3.641H21.6a3.645 3.645 0 0 0 3.641-3.641V8.833A3.645 3.645 0 0 0 21.6 5.192zm2.184 12.621h-5.34a2.184 2.184 0 1 1 0-4.369h5.34v4.369zm0-5.825h-5.34a3.641 3.641 0 1 0 0 7.281h5.34v3.155a2.187 2.187 0 0 1-2.184 2.185H3.641a2.187 2.187 0 0 1-2.184-2.184V8.833a2.187 2.187 0 0 1 2.184-2.184H21.6a2.187 2.187 0 0 1 2.184 2.184v3.155z" class="cls-1" transform="translate(0 -5.192)"/>
+                </g>
+            </g>
+            <g id="Group_7486" transform="translate(17.718 9.708)">
+                <g id="Group_7485">
+                    <path id="Path_8450" d="M43.814 28.269h-.971a.728.728 0 0 0 0 1.456h.971a.728.728 0 0 0 0-1.456z" class="cls-1" transform="translate(-42.115 -28.269)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

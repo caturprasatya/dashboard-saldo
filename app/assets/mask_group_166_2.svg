@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_1743" fill="#dc798e" stroke="#dc798e" stroke-width="0.2px" d="M0 0H36V36H0z" transform="translate(2692 4209)"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:#dc798e;stroke:#dc798e;stroke-width:.3px}
+        </style>
+    </defs>
+    <g id="Mask_Group_166" clip-path="url(#clip-path)" transform="translate(-2692 -4209)">
+        <g id="bill" transform="translate(2692 4209)">
+            <path id="Path_8556" d="M28.523 0H7.477a2.173 2.173 0 0 0-2.171 2.171v31.658A2.173 2.173 0 0 0 7.477 36h17.2a.756.756 0 0 0 .534-.221l5.262-5.263a.756.756 0 0 0 .221-.534V2.171A2.173 2.173 0 0 0 28.523 0zm-3.091 33.42V31.4a.66.66 0 0 1 .659-.659h2.023zM7.477 1.511h21.046a.66.66 0 0 1 .659.659v2.336H6.817V2.171a.66.66 0 0 1 .66-.66zm-.66 32.318V6.018h22.366v23.208h-3.092A2.173 2.173 0 0 0 23.92 31.4v3.092H7.477a.66.66 0 0 1-.66-.663z" class="cls-3"/>
+            <path id="Path_8557" d="M9.928 11.613h9.9a.756.756 0 0 0 0-1.511h-9.9a.756.756 0 0 0 0 1.511z" class="cls-3"/>
+            <path id="Path_8558" d="M22.847 11.613H25.4a.756.756 0 0 0 0-1.511h-2.553a.756.756 0 1 0 0 1.511z" class="cls-3"/>
+            <path id="Path_8559" d="M9.928 17.614h9.9a.756.756 0 1 0 0-1.511h-9.9a.756.756 0 0 0 0 1.511z" class="cls-3"/>
+            <path id="Path_8560" d="M22.847 17.614H25.4a.756.756 0 1 0 0-1.511h-2.553a.756.756 0 1 0 0 1.511z" class="cls-3"/>
+            <path id="Path_8561" d="M20.58 22.859a.756.756 0 0 0-.756-.756h-9.9a.756.756 0 0 0 0 1.511h9.9a.756.756 0 0 0 .756-.755z" class="cls-3"/>
+            <path id="Path_8562" d="M22.847 23.614H25.4a.756.756 0 0 0 0-1.511h-2.553a.756.756 0 0 0 0 1.511z" class="cls-3"/>
+            <path id="Path_8563" d="M25.4 27.933a.756.756 0 0 0 0-1.511h-7.2a.756.756 0 1 0 0 1.511z" class="cls-3"/>
+        </g>
+    </g>
+</svg>
