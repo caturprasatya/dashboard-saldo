@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     height: 200,
   },
   image: {
-    height: 150,
+    height: 170,
   },
   viewMore: {
     width: width / 2,

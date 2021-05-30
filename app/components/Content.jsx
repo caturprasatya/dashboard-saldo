@@ -1,29 +1,29 @@
 import React from 'react'
-import { Image, FlatList, StyleSheet, Text, View, Dimensions, Alert } from 'react-native';
+import { Image, FlatList, StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Avatar, Button } from 'react-native-paper';
+import { Button } from 'react-native-paper';
 import {useFonts,Poppins_700Bold,Poppins_600SemiBold,Poppins_500Medium} from '@expo-google-fonts/poppins';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import moment from 'moment'
 
-import ListItemMyTransaction from './listItemTransaction.jsx';
-import { room } from '../../data/data'
+import ListItemMyTransaction from './listItemTransaction';
+import ListItemMyBooking from './listItemBooking';
+import { room, booking, financial } from '../../data/data'
 import SmallCard from './SmallCard'
 
 const { width } = Dimensions.get('screen')
 
 const Content = () =>  {
-  let [fontsLoaded] = useFonts({Poppins_700Bold,Poppins_600SemiBold,Poppins_500Medium})
+    let [fontsLoaded] = useFonts({Poppins_700Bold,Poppins_600SemiBold,Poppins_500Medium})
     if (!fontsLoaded) {
         return <Text>loading</Text>;
     }
 
-    const date = new Date().toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'short', year: 'numeric'
-    })
-
-    const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false })
-
-    const financial = [{id: 1, status: "income"}, {id: 2, status: "expance"} ]
+    const day = moment();
+    const date = day.format("DD-MMM-YYYY").split("-").join(" ");
+    const time = day.format('HH:MM')
+    const sortFinancial = financial.splice(0, 3)
+    const sortBooking = booking.splice(0, 4)
 
     const handleButton = (event) => {
       event.preventDefault()
@@ -35,13 +35,11 @@ const Content = () =>  {
     <View style={styles.content}>
       <LinearGradient colors={['#F3FDFF', '#FFFFFF']} style={styles.card}>
         <View style={styles.header}>
-          <Text style={{...styles.desaName, fontSize: 15, color: 'black'}}>Monthly Total</Text>   
-          <Text style={{...styles.desaName, fontSize: 10, color: '#c8c2bc', fontFamily: 'Poppins_500Medium' }}>Last Update { date }, { time }</Text>
+          <Text style={{...styles.subCategory, fontSize: 15, color: 'black'}}>Monthly Total</Text>   
+          <Text style={{...styles.subCategory, fontSize: 12, color: '#c8c2bc', fontFamily: 'Poppins_500Medium' }}>Last Update: { date }, { time }</Text>
         </View>
         <View style={styles.line}></View>
         <View style={{flex: 1, width: "100%", flexDirection: 'row'}}>
-      {/* </View>
-      </LinearGradient> */}
           <View style={styles.cardGroup}>
             <View style={styles.cardPatch}>
               <Image source={require('../../assets/mask_group_157.svg')} style={styles.logo} width="80%" height="80%"></Image>
@@ -68,46 +66,69 @@ const Content = () =>  {
           </View>
         </View>
       </LinearGradient>
-      <View style={styles.buttonContainer}>
-          <Button onPress={handleButton} mode="contained" style={{marginRight: 10, width: 50}}>Pay</Button>
-          <Button onPress={handleButton} mode="contained" style={{paddingTop:0}}>
-              <Icon name="commenting-o" style={{fontSize:20}}></Icon>
-          </Button>
-      </View>
-      <View style={{marginTop:20, flex:1, marginBottom:0}}>
-        <Text style={{...styles.desaName, color:"#3C5CAC"}}>Financial Statistics</Text>
-        {
-          financial?.map(data => 
-            <ListItemMyTransaction
-            transaction={data}
-            keyExtractor={data.id}
-            key={ data.id }
-            />
-          )
-        }
-        <LinearGradient 
-          colors={['transparent', 'rgba(255,255)']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 0, y: 1 }} 
-          style={styles.linearGradient}>
-            <Text style={{color: "#000"}}>Test</Text>
-        </LinearGradient>
-      </View>
-      <View style={{marginTop:-200, flex:1, marginBottom:8}}>
-        <Text style={{...styles.desaName, color:"#3C5CAC"}}>My Property</Text>
-        <FlatList
-          data={room}
-          horizontal
-          showsHorizontalScrollIndicator={true}
-          renderItem={({ item, index }) => (
-            <SmallCard
-              item={item}
-              key={ index }
-            />
-          )}
-          keyExtractor={item => item.id.toString()}
-        />
-      </View>
+      <ScrollView horizontal={true}>
+        <View style={styles.buttonContainer}>
+            <Button onPress={handleButton} mode="contained" style={{marginRight: 10, width: 50, flex: 1}}>Add Property</Button>
+            <Button onPress={handleButton} mode="contained" style={{paddingTop:0, flex: 1}}>
+                <Icon name="commenting-o" style={{fontSize:20}}></Icon>
+            </Button>
+        </View>
+      </ScrollView>
+      <ScrollView>
+        <View style={{marginTop:20, flex:1, marginBottom:0}}>
+          <Text style={{...styles.subCategory, color:"#3C5CAC"}}>Financial Statistics</Text>
+          {
+            sortFinancial?.map(data => 
+              <ListItemMyTransaction
+              transaction={data}
+              keyExtractor={data.id}
+              key={ data.id }
+              />
+            )
+          }
+          <LinearGradient 
+            colors={['transparent', 'rgba(255,255)']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }} 
+            style={styles.linearGradient}>
+              <Text style={{color: "#000"}}>Test</Text>
+          </LinearGradient>
+        </View>
+        <View style={{marginTop:2, flex:1, marginBottom:0}}>
+          <Text style={{...styles.subCategory, color:"#3C5CAC"}}>Booking Statistics</Text>
+          {
+            sortBooking?.map(data => 
+              <ListItemMyBooking
+              booking={data}
+              keyExtractor={data.id}
+              key={ data.id }
+              />
+            )
+          }
+          <LinearGradient 
+            colors={['transparent', 'rgba(255,255)']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }} 
+            style={styles.linearGradient}>
+              <Text style={{color: "#000"}}>Test</Text>
+          </LinearGradient>
+        </View>
+        <View style={{marginTop:0, flex:1, marginBottom:8}}>
+          <Text style={{...styles.subCategory, color:"#3C5CAC"}}>My Property</Text>
+          <FlatList
+            data={room}
+            horizontal
+            showsHorizontalScrollIndicator={true}
+            renderItem={({ item, index }) => (
+              <SmallCard
+                item={item}
+                key={ index }
+              />
+            )}
+            keyExtractor={item => item.id.toString()}
+          />
+        </View>
+      </ScrollView>
     </View>
   )
 }
@@ -134,7 +155,7 @@ const styles = StyleSheet.create({
     paddingTop: 17,
     marginTop: -60
 },
-  desaName:{
+  subCategory:{
     fontFamily:'Poppins_700Bold',
     fontSize: 23,
     color: "#00ead3",
@@ -170,11 +191,11 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     alignSelf: 'center',
-    height: 800
+    minHeight: 800
   },
   line: {
-    height: 1,
-    marginTop: 10,
+    height: 1.3,
+    marginTop: 8,
     width: "90%",
     backgroundColor: 'black',
     alignSelf: 'center'
@@ -209,7 +230,8 @@ const styles = StyleSheet.create({
   linearGradient: {
     height: 50,
     width: '100%',
-    marginTop: -30,
+    marginTop: -10,
+    paddingLeft: 10
   },
 });
 

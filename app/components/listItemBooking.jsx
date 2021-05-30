@@ -2,50 +2,49 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View, Dimensions } from 'react-native';
 import moment from 'moment';
 
-import income from '../../assets/mask_group_164.svg'
-import expance from '../../assets/mask_group_166.svg'
+import checkIn from '../../assets/mask_group_170.svg'
+import checkOut from '../../assets/mask_group_171.svg'
 import { room } from '../../data/data'
 
 const { width } = Dimensions.get('screen')
 
-const ListItemTransaction = ({ transaction })=>{
+const ListItemTransaction = ({ booking })=>{
 
   const day = moment();
   const date = day.format("DD-MMM-YYYY").split("-").join(" ");
   const time = day.format('HH:MM')
   const getCurrentMonth = day.format('MMM');
 
-  const convertRp = saldo => {
-    switch (transaction.status) {
-      case "income":
-        return `+ Rp ${(saldo/1000000).toFixed(1)}Jt`
-      case "expense":
-        return `- Rp ${(saldo/1000000).toFixed(1)}Jt`
+  const getQuantity = quantity => {
+    switch (booking.status) {
+      case "checkIn":
+        return `+ ${quantity} Peoples`
+      case "checkOut":
+        return `- ${quantity} Peoples`
       default:
         break;
     }
   }
 
   useEffect(() => {
-    console.log(transaction.status === "income" ? true : false);
-    console.log(transaction.status);
-    console.log((2300000/1000000).toFixed(1));
+    console.log(booking.status === "income" ? true : false);
     console.log(getCurrentMonth);
+    console.log(room);
   }, [])
 
     return (
       <View style={styles.list}>
         <View style={{ flexDirection:"row", alignItems:"center", justifyContent:"space-between", width:"100%"}}>
           <View style={{ flexDirection:"row", alignItems:"center", paddingLeft:0, flex:3}}>
-            <View style={{ width: width > 500 ? 80 : 40, height: width > 500 ? 80 : 40, backgroundColor: transaction.status === 'income' ? "#E6FDFF" : "#FCEEF1" }}>
-              <Image source={ transaction.status ==="income" ? income : expance } style={styles.iconImage}></Image>
+            <View style={{ width: width > 500 ? 80 : 40, height: width > 500 ? 80 : 40, backgroundColor: booking.status === 'checkOut' ? "#fff0e1" : "#e6fdff" }}>
+              <Image source={ booking.status ==="checkIn" ? checkIn : checkOut } style={ styles.iconImage }></Image>
             </View>
             <View style={{flex:1, marginLeft: 5}}>
-              <Text style={{fontFamily:"Poppins_600SemiBold", fontSize: 15}} numberOfLines={1}>{ transaction.title } - { getCurrentMonth }</Text>
-              <Text style={{fontFamily:"Poppins_500Medium", marginTop:-5, fontSize: 10}}>{ date } | {time} </Text>
+              <Text style={{fontFamily:"Poppins_600SemiBold", fontSize: 14, flexGrow: 1}} numberOfLines={1}>{ booking.title }</Text>
+              <Text style={{fontFamily:"Poppins_500Medium", marginTop:-3, fontSize: 10, flex: 1}}>{ date } | {time} </Text>
             </View>
           </View>
-          <Text style={{fontFamily:"Poppins_500Medium", color: transaction.status === 'income' ? 'blue' : 'red'}}>{ convertRp(transaction.amount) }</Text>
+          <Text style={{fontFamily:"Poppins_500Medium", color: booking.status === 'checkIn' ? '#45b3be' : '#f17c31'}}>{ getQuantity(booking.quantity) }</Text>
         </View>
     </View>
     )

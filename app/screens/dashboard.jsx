@@ -1,6 +1,6 @@
 // ! package / modules
 import React, { useEffect } from 'react';
-import { Image, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, View, ImageBackground, ScrollView } from 'react-native';
 import { Avatar, Button } from 'react-native-paper';
 import {useFonts,Poppins_700Bold,Poppins_600SemiBold,Poppins_500Medium} from '@expo-google-fonts/poppins';
 
