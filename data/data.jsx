@@ -1,40 +1,48 @@
 const financial = [
   {
+    id: 1,
     status: 'income',
     title: 'Monthly Income',
     amount: 1000000
   },
   {
+    id: 2,
     status: 'expense',
     title: 'Electricity Bill',
     amount: 2600000
   },
   {
+    id: 3,
     status: 'income',
     title: 'Monthly Income',
     amount: 700000
   },
   {
+    id: 4,
     status: 'expense',
     title: 'Electricity Bill',
     amount: 1290000
   },
   {
+    id: 5,
     status: 'income',
     title: 'Monthly Income',
     amount: 1200000
   },
   {
+    id: 6,
     status: 'expense',
     title: 'Electricity Bill',
     amount: 3000000
   },
   {
+    id: 7,
     status: 'income',
     title: 'Monthly Income',
     amount: 900000
   },
   {
+    id: 8,
     status: 'expense',
     title: 'Electricity Bill',
     amount: 2000000
@@ -43,41 +51,49 @@ const financial = [
 
 const booking = [
   {
+    id: 1,
     status: 'checkIn',
     title: 'Check In from Kost Amanah',
     quantity: '2'
   },
   {
+    id: 2,
     status: 'checkOut',
     title: 'Check Out from Kost Garuda',
     quantity: '1'
   },
   {
+    id: 3,
     status: 'checkIn',
     title: 'Check In from Kost Fatmawati',
     quantity: '3'
   },
   {
+    id: 4,
     status: 'checkOut',
     title: 'Check Out from Kost Rajawali',
     quantity: '1'
   },
   {
+    id: 5,
     status: 'checkIn',
     title: 'Check In from Kost Rajawali',
     quantity: '1'
   },
   {
+    id: 6,
     status: 'checkOut',
     title: 'Check Out from Kost Garuda',
     quantity: '2'
   },
   {
+    id: 7,
     status: 'checkIn',
     title: 'Check In from Kost Fatmawati',
     quantity: '2'
   },
   {
+    id: 8,
     status: 'checkOut',
     title: 'Check Out from Kost Amanah',
     quantity: '1'

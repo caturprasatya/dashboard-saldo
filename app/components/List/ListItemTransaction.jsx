@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View, Dimensions } from 'react-native';
 import moment from 'moment';
 
-import income from '../../assets/mask_group_164.svg'
-import expance from '../../assets/mask_group_166.svg'
-import { room } from '../../data/data'
-
 const { width } = Dimensions.get('screen')
 
 const ListItemTransaction = ({ transaction })=>{
@@ -26,6 +22,9 @@ const ListItemTransaction = ({ transaction })=>{
     }
   }
 
+  const Income = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_164.svg?alt=media&token=bb469751-32ed-46b1-95f8-106f7b8377e7'
+  const Expense = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_166.svg?alt=media&token=ef49c8f9-6c6a-4459-9c67-63268935dfb6'
+
   useEffect(() => {
     console.log(transaction.status === "income" ? true : false);
     console.log(transaction.status);
@@ -38,7 +37,8 @@ const ListItemTransaction = ({ transaction })=>{
         <View style={{ flexDirection:"row", alignItems:"center", justifyContent:"space-between", width:"100%"}}>
           <View style={{ flexDirection:"row", alignItems:"center", paddingLeft:0, flex:3}}>
             <View style={{ width: width > 500 ? 80 : 40, height: width > 500 ? 80 : 40, backgroundColor: transaction.status === 'income' ? "#E6FDFF" : "#FCEEF1" }}>
-              <Image source={ transaction.status ==="income" ? income : expance } style={styles.iconImage}></Image>
+              <Image source={{ uri: transaction.status === 'income' ? Income : Expense }} style={styles.iconImage}></Image>
+            
             </View>
             <View style={{flex:1, marginLeft: 5}}>
               <Text style={{fontFamily:"Poppins_600SemiBold", fontSize: 15}} numberOfLines={1}>{ transaction.title } - { getCurrentMonth }</Text>

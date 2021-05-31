@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Dashboard from './app/screens/dashboard'
+import Dashboard from './app/screens/dashboard.jsx'
 
 export default function App() {
   return (

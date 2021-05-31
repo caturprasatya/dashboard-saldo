@@ -7,8 +7,9 @@ import {
 } from 'react-native';
 import Svg, {
   Use,
+  SvgUri
 } from 'react-native-svg';
-import Title from './Title'
+import Title from '../Title'
 
 
 const BlockCard = ({item, style, imageStyle}) => {
@@ -23,7 +24,12 @@ const BlockCard = ({item, style, imageStyle}) => {
           style={[styles.image, imageStyle]} 
           width="100%"
           height="100%"
+          resizeMode="cover"
           source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/20200814_172713.svg?alt=media&token=b9d65a89-ae50-43ba-85aa-4c2124c64b72'}} />
+          {/* <SvgUri
+            width="25"
+            height="25"
+            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/20200814_172713.svg?alt=media&token=b9d65a89-ae50-43ba-85aa-4c2124c64b72'}} /> */}
         <View style={styles.contentContainer}>
           <Title>{title}</Title>
         </View>

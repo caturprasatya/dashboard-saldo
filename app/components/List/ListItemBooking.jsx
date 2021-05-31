@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View, Dimensions } from 'react-native';
 import moment from 'moment';
 
-import checkIn from '../../assets/mask_group_170.svg'
-import checkOut from '../../assets/mask_group_171.svg'
-import { room } from '../../data/data'
-
 const { width } = Dimensions.get('screen')
 
 const ListItemTransaction = ({ booking })=>{
@@ -26,18 +22,21 @@ const ListItemTransaction = ({ booking })=>{
     }
   }
 
-  useEffect(() => {
-    console.log(booking.status === "income" ? true : false);
-    console.log(getCurrentMonth);
-    console.log(room);
-  }, [])
+  const checkIn = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_170.svg?alt=media&token=8e8229bd-b568-4e3c-ac0f-316b561189c0'
+  const checkOut = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_171.svg?alt=media&token=b0eec123-4cc3-493b-9d34-7c1cf81fec8f' 
 
     return (
       <View style={styles.list}>
         <View style={{ flexDirection:"row", alignItems:"center", justifyContent:"space-between", width:"100%"}}>
           <View style={{ flexDirection:"row", alignItems:"center", paddingLeft:0, flex:3}}>
             <View style={{ width: width > 500 ? 80 : 40, height: width > 500 ? 80 : 40, backgroundColor: booking.status === 'checkOut' ? "#fff0e1" : "#e6fdff" }}>
-              <Image source={ booking.status ==="checkIn" ? checkIn : checkOut } style={ styles.iconImage }></Image>
+              <Image source={{ uri: booking.status ==="checkIn" ? checkIn : checkOut} } style={ styles.iconImage }></Image>
+              {/* <SvgUri
+                width="100%"
+                height="100%"
+                uri="http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg"
+              /> */}
+
             </View>
             <View style={{flex:1, marginLeft: 5}}>
               <Text style={{fontFamily:"Poppins_600SemiBold", fontSize: 14, flexGrow: 1}} numberOfLines={1}>{ booking.title }</Text>
