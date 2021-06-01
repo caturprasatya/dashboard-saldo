@@ -1,19 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Dashboard from './app/screens/dashboard.jsx'
 
 export default function App() {
   return (
-    <Dashboard />
+      <ScrollView
+      contentContainerStyle={{flex: 1}}
+        style={styles.scrollview}
+        onScroll={true}
+        nestedScrollEnabled={true}
+        horizontal={false}
+      >
+        <Dashboard />
+      </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scrollview: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

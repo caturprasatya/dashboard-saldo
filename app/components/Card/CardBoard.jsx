@@ -12,10 +12,10 @@ const CardBoard = () => {
   const date = day.format("DD-MMM-YYYY").split("-").join(" ");
   const time = day.format('HH:MM')
 
-  const income = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_157.svg?alt=media&token=a9177a1c-e5f7-4863-8e4e-b11d903e851a'
-  const expense = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_159.svg?alt=media&token=8c9a30f5-7095-4f89-aba4-ce7618c74cd4'
-  const useRoom = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_160.svg?alt=media&token=79ca92a2-5e57-475e-8554-00aab263c814'
-  const emptyRoom = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_161.svg?alt=media&token=b1c34d70-b4df-4652-b945-f24d3c520f5f'
+  const income = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_159.png?alt=media&token=d2fa1de9-a552-4e2a-908a-ba27deaabd44'
+  const expense = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_157.png?alt=media&token=ea1b4a36-b412-4dbc-9ccc-fb2687043626'
+  const useRoom = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_160.png?alt=media&token=adb1eff1-e713-4ca9-8ab1-6db2123fca8b'
+  const emptyRoom = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_161.png?alt=media&token=e2f59382-efd6-41a7-9644-ed1ba95f55b9'
 
   const convertRp = money => {
     if (money % 1000000 === 0) {

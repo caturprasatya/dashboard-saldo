@@ -41,11 +41,12 @@ const Content = () =>  {
           }
           <View 
             style={styles.linearGradient}>
-            <ImageBackground resizeMode="cover" style={styles.background} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/jamie_fenn_wd_qu_ee_je_o_0_unsplash_4.svg?alt=media&token=ece9f510-9a56-4599-8132-1217e5de131e' }}></ImageBackground>
-              <Text style={{color: "#000", fontFamily: 'Poppins_600SemiBold', fontSize: 14, marginBottom: 0, color: '#45B3BE', marginLeft: 16}}>See Details</Text>
+            <ImageBackground resizeMode="cover" style={[styles.background, { marginTop: -0 }]} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/jamie_fenn_wd_qu_ee_je_o_0_unsplash_4.png?alt=media&token=df7341c2-ce10-447a-8c15-bd909b6d9aa2' }}></ImageBackground>
+              <Text style={styles.textDetail}>See Details</Text>
           </View>
         </View>
-        <View style={{marginTop:20, flex:1, marginBottom:0}}>
+
+        <View style={{marginTop:30, flex:1, marginBottom:0}}>
           <Text style={{...styles.subCategory, color:"#3C5CAC"}}>Booking Statistics</Text>
           {
             sortBooking?.map(data => 
@@ -58,8 +59,8 @@ const Content = () =>  {
           }
           <View 
             style={styles.linearGradient}>
-            <ImageBackground resizeMode="cover" style={styles.background} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/jamie_fenn_wd_qu_ee_je_o_0_unsplash_4.svg?alt=media&token=ece9f510-9a56-4599-8132-1217e5de131e' }}></ImageBackground>
-              <Text style={{color: "#000", fontFamily: 'Poppins_600SemiBold', fontSize: 14, marginBottom: 0, marginLeft: 16, color: '#45B3BE'}}>See Details</Text>
+            <ImageBackground resizeMode="cover" style={styles.background} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/jamie_fenn_wd_qu_ee_je_o_0_unsplash_4.png?alt=media&token=df7341c2-ce10-447a-8c15-bd909b6d9aa2' }}></ImageBackground>
+              <Text style={styles.textDetail}>See Details</Text>
           </View>
         </View>
         <View style={{marginTop:30, flex:1, marginBottom:8}}>
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
   },
   subCategory:{
     fontFamily:'Poppins_700Bold',
-    fontSize: 23,
+    fontSize: 20,
     color: "#00ead3",
   },
   judulSaldo:{
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
     height: "100%",
     padding: 0,
   },
+  textDetail: {color: "#000", fontFamily: 'Poppins_600SemiBold', fontSize: 14, marginBottom: -1, color: '#45B3BE', marginLeft: 16}
 });
 
 export default Content

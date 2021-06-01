@@ -22,15 +22,8 @@ const ListItemTransaction = ({ transaction })=>{
     }
   }
 
-  const Income = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_164.svg?alt=media&token=bb469751-32ed-46b1-95f8-106f7b8377e7'
-  const Expense = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_166.svg?alt=media&token=ef49c8f9-6c6a-4459-9c67-63268935dfb6'
-
-  useEffect(() => {
-    console.log(transaction.status === "income" ? true : false);
-    console.log(transaction.status);
-    console.log((2300000/1000000).toFixed(1));
-    console.log(getCurrentMonth);
-  }, [])
+  const Income = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_164.png?alt=media&token=42c73e30-960a-404e-9787-77c79d08e8c2'
+  const Expense = 'https://firebasestorage.googleapis.com/v0/b/profile-app-48011.appspot.com/o/mask_group_166.png?alt=media&token=7d739d55-8c0f-4802-845a-e513daafc6cb'
 
     return (
       <View style={styles.list}>
